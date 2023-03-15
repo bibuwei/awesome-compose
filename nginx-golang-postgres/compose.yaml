@@ -20,8 +20,8 @@ services:
     environment:
       - POSTGRES_DB=example
       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    expose:
-      - 54320
+    ports:
+      - 54320:5432
     healthcheck:
       test: [ "CMD", "pg_isready" ]
       interval: 10s
